@@ -27,7 +27,7 @@ class TransaksiDetailController extends Controller
     public function edit($id)
     {
         $transaksidetail = TransaksiDetail::findOrFail($id);
-        return view('transaksidetail.edit', );
+        return view('transaksidetail.edit', compact('transaksidetail'));
     }
 
     public function update(Request $request, $id)
