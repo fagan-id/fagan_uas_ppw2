@@ -11,7 +11,7 @@
                     {{ Session::get('pesan') }}
                 </div>
             @endif
-            <table class="table table-bordered datatable">
+            <table class="table table-bordered datatable" id="myTable">
                 <thead>
                 <tr>
                     <th>No</th>
@@ -47,4 +47,15 @@
             </table>
         </div>
     </div>
-    @endsection
+    <script>
+        let table = new DataTable('#myTable');
+        $(document).ready(function() {
+        $('.datatable').DataTable({
+            language: {
+                url: "//cdn.datatables.net/plug-ins/1.13.5/i18n/Indonesian.json"
+            }
+        });
+    });
+</script>
+    </script>
+@endsection
