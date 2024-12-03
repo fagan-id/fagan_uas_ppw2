@@ -23,9 +23,9 @@
                         <td>{{ $index+1 }}</td>
                         <td>{{ \Carbon\Carbon::parse($data->transaksi->tanggal)->format('d/m/Y') }}</td>
                         <td>{{ $data->nama_produk }}</td>
-                        <td class="text-end">{{ number_format($data->hargasatuan, 0, '.', '.') }}</td>
-                        <td class="text-end">{{ number_format($data->junlah, 0, '.', '.') }}</td>
-                        <td class="text-end">{{ number_format($data->subt0tal, 0, '.', '.') }}</td>
+                        <td class="text-end">{{ number_format($data->harga_satuan, 0, '.', '.') }}</td>
+                        <td class="text-end">{{ number_format($data->jumlah, 0, '.', '.') }}</td>
+                        <td class="text-end">{{ number_format($data->subtotal, 0, '.', '.') }}</td>
                     </tr>
                 @endforeach
                 </tbody>
