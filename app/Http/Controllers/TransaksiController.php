@@ -40,6 +40,7 @@ class TransaksiController extends Controller
 
         // Gunakan transaction
         try {
+            $transaksi = new Transaksi();
             $transaksi->tanggal_pembelian = $request->input('tanggal_pembelian');
             $transaksi->total_harga = 0;
             $transaksi->bayar = $request->input('bayar');
@@ -47,7 +48,8 @@ class TransaksiController extends Controller
             $transaksi->save();
 
             $total_harga = 0;
-            for ($i=0; $i < count($transaksidetail); $i++) {
+            for ($i=0; $i < 3; $i++) {
+                $transaksidetail = new TransaksiDetail();
                 $transaksidetail->id_transaksi = $transaksi->id;
                 $transaksidetail->nama_produk = $request->input('nama_produk'.$i);
                 $transaksidetail->harga_satuan = $request->input('harga_satuan'.$i);
