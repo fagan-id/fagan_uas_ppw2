@@ -40,10 +40,11 @@ class TransaksiDetailController extends Controller
 
         // Gunakan transaction
         try {
+            $transaksidetail = TransaksiDetail::findOrFail($id);
             $transaksidetail->nama_produk = $request->input('nama_produk');
             $transaksidetail->harga_satuan = $request->input('harga_satuan');
             $transaksidetail->jumlah = $request->input('jumlah');
-            $transaksidetail->subtotal = harga_satuan * jumlah
+            $transaksidetail->subtotal = $request->input('harga_satuan') * $request->input('jumlah');
 
             $transaksi->total_harga = sum subtotal
             $transaksi->kembalian = bayar - total_harga; // hapus rumus
