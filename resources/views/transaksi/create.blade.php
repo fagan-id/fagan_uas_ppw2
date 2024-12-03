@@ -1,4 +1,5 @@
-
+@extends('layouts')
+@section('content')
     <h2>Tambah Transaksi</h2>
     <div class="card">
         <div class="card-header bg-white">
@@ -19,7 +20,7 @@
                 <div class="d-flex flex-column gap-4 mb-4">
                     <div class="form-group">
                         <label>Tanggal Pembelian</label>
-                        <input type="date" class="form-control" name="" value="{{ old('') }}" required>
+                        <input type="date" class="form-control" name="tanggal_pembelian" value="{{ old('') }}" required>
                     </div>
                 </div>
                 <h6>Produk yang dibeli</h6>
@@ -35,27 +36,27 @@
                                 <div class="d-flex flex-column gap-4 mb-4">
                                     <div class="form-group">
                                         <label>Nama Produk</label>
-                                        <input type="text" class="form-control" name="nama_produk1" value="{{ old('') }}" required>
+                                        <input type="text" class="form-control" name="nama_produk1" value="{{ old('nama_produk1') }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Harga Satuan</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Rp</span>
-                                            <input type="number" class="form-control" name="harga_satuan1" value="{{ old('') }}" required>
+                                            <input type="number" class="form-control" name="harga_satuan1" value="{{ old('harga_satuan1') }}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Jumlah</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Rp</span>
-                                            <input type="number" class="form-control" name="jumlah1" value="{{ old('') }}" required>
+                                            <input type="number" class="form-control" name="jumlah1" value="{{ old('jumlah1') }}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Subtotal</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Rp</span>
-                                            <input type="text" class="form-control" name="subtotal1" value="{{ old('') }}" readonly>
+                                            <input type="text" class="form-control" name="subtotal1" value="{{ old('subtotal1') }}" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -73,27 +74,27 @@
                                 <div class="d-flex flex-column gap-4 mb-4">
                                     <div class="form-group">
                                         <label>Nama Produk</label>
-                                        <input type="text" class="form-control" name="nama_produk2" value="{{ old('') }}" required>
+                                        <input type="text" class="form-control" name="nama_produk2" value="{{ old('nama_produk2') }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Harga Satuan</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Rp</span>
-                                            <input type="number" class="form-control" name="" value="{{ old('') }}" required>
+                                            <input type="number" class="form-control" name="harga_satuan2" value="{{ old('harga_satuan2') }}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Jumlah</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Rp</span>
-                                            <input type="number" class="form-control" name="" value="{{ old('') }}" required>
+                                            <input type="number" class="form-control" name="jumlah2" value="{{ old('jumlah2') }}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Subtotal</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Rp</span>
-                                            <input type="text" class="form-control" name="" value="{{ old('') }}" readonly>
+                                            <input type="text" class="form-control" name="subtotal2" value="{{ old('subtotal2') }}" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -117,21 +118,21 @@
                                         <label>Harga Satuan</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Rp</span>
-                                            <input type="number" class="form-control" name="" value="{{ old('') }}" required>
+                                            <input type="number" class="form-control" name="harga_satuan3" value="{{ old('') }}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Jumlah</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Rp</span>
-                                            <input type="number" class="form-control" name="" value="{{ old('') }}" required>
+                                            <input type="number" class="form-control" name="jumlah3" value="{{ old('') }}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Subtotal</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">Rp</span>
-                                            <input type="text" class="form-control" name="" value="{{ old('') }}" readonly>
+                                            <input type="text" class="form-control" name="subtotal3" value="{{ old('') }}" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +151,7 @@
                     <label>Bayar</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Rp</span>
-                        <input type="number" class="form-control" name="" value="{{ old('') }}" required>
+                        <input type="number" class="form-control" name="bayar" value="{{ old('bayar') }}" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -201,3 +202,4 @@
         });
     });
 </script>
+@endsection
