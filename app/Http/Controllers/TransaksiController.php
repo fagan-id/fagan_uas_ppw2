@@ -14,7 +14,7 @@ class TransaksiController extends Controller
     {
         $transaksi = Transaksi::orderBy('tanggal_pembelian','DESC')->get();
 
-        return view('transaksi.index');
+        return view('transaksi.index',compact('transaksi'));
     }
 
     public function create()
@@ -47,7 +47,7 @@ class TransaksiController extends Controller
             $transaksi->save();
 
             $total_harga = 0;
-            for (){
+            for ($i=0; $i < count($transaksidetail); $i++) {
                 $transaksidetail->id_transaksi = $transaksi->id;
                 $transaksidetail->nama_produk = $request->input('nama_produk'.$i);
                 $transaksidetail->harga_satuan = $request->input('harga_satuan'.$i);
@@ -56,7 +56,7 @@ class TransaksiController extends Controller
                 $total_harga += $transaksidetail->subtotal;
             }
             $transaksi->total_harga = $total_harga;
-            $transaksi->kembalian =
+            $transaksi->kembalian = $total_harga-$request->input('bayar');
 
             return redirect('transaksidetail/'.$transaksi->id)->with('pesan', 'Berhasil menambahkan data');
         } catch (\Exception $e) {
