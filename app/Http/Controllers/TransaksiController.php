@@ -68,10 +68,10 @@ class TransaksiController extends Controller
     public function edit($id)
     {
         $transaksi = Transaksi::findOrFail($id);
-        return view('transaksi.edit',);
+        return view('transaksi.edit',compact('transaksi'));
     }
 
-    public function update(Request $request)
+    public function update(Request $request, String $id)
     {
         $request->validate([
             'bayar' => 'required|numeric'
@@ -79,15 +79,15 @@ class TransaksiController extends Controller
 
         $transaksi = Transaksi::findOrFail($id);
         $transaksi->bayar = $request->input('bayar');
-        $transaksi->kembalian =
+        $transaksi->kembalian = $transaksi->total_harga-$request->input('bayar');
 
         return redirect('/transaksi') -> with('pesan', 'Berhasil mengubah data');
     }
 
-    public function destroy()
+    public function destroy(String $id)
     {
         $transaksi = Transaksi::findOrFail($id);
-
+        $transaksi->delete();
         return redirect('/transaksi');
     }
 }

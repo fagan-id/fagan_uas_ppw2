@@ -14,7 +14,7 @@ class TransaksiDetailController extends Controller
     {
         $transaksidetail = TransaksiDetail::with('transaksi')->orderBy('id','DESC')->get();
 
-        return view('transaksidetail.index', );
+        return view('transaksidetail.index', compact('transaksidetail'));
     }
 
     public function detail(Request $request)
