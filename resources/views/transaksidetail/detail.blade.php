@@ -42,7 +42,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($transaksi as $index => $data)
+                @foreach ($transaksi->transaksidetail as $index => $data)
                     <tr>
                         <td>{{ $index+1 }}</td>
                         <td>{{ \Carbon\Carbon::parse($data->transaksi->tanggal_pembelian)->format('d/m/Y') }}</td>
